@@ -22,4 +22,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/conversation', "App\Http\Controllers\Conversations\ConversationsController@index" )->name('conversation.index');
+Route::get('/conversations', "App\Http\Controllers\Conversations\ConversationsController@index" )->name('conversations.index');
+Route::get('/conversations/{conversation}', "App\Http\Controllers\Conversations\ConversationsController@show" )->name('conversations.show');

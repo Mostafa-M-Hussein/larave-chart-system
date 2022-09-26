@@ -43,11 +43,16 @@ class User extends Authenticatable
     ];
 
 
-    public function avatar () 
+    public function avatar ()
     {
-        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim(  $this->email  ) ) ) . "?d=mm&s=80" . urlencode( $default ) . "&s=" . $size;
+        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim(  $this->email  ) ) ) . "?d=mm&s=80" ;
+        return $grav_url ;
 
-        return $grav_url ; 
+    }
+
+    public function  conversations ()
+    {
+        return $this->belongsToMany(Conversation::class )  ;
 
     }
 }

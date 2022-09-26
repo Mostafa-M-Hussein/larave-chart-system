@@ -82,6 +82,7 @@
         </main>
     </div>
     @livewireStyles
+    @livewireScripts
     @yield('scrips')
 </body>
 </html>
